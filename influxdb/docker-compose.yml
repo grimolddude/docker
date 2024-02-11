@@ -41,6 +41,8 @@ services:
     restart: unless-stopped
     networks:
       net_influxdb: null
+    ports:
+      - 6677:6677
     volumes:
       - vol_influxdb_config:/etc/influxdb2
       - vol_influxdb_db:/var/lib/influxdb2
