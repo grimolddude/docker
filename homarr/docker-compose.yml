@@ -55,6 +55,8 @@ services:
       - vol_homarr_config:/app/data/configs
       - vol_homarr_icons:/app/public/icons
       - vol_homarr_data:/data
+    ports:
+      - 7788:7788
     networks:
       net_homarr: null
     labels:
