@@ -103,7 +103,7 @@ services:
       - vol_prowlarr:/config
     networks:
       net_prowlarr: null
-        ports:
+    ports:
       -  9118:9118
     restart: always
     labels:
