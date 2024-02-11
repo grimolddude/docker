@@ -42,6 +42,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/timezone:/etc/timezone:ro
       - vol_prowlarr:/config
+    ports:
+      - 9118:9118
     networks:
       net_prowlarr: null
     restart: always
