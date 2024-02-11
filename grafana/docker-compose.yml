@@ -31,6 +31,8 @@ services:
     image: grafana/grafana-enterprise
     container_name: grafana
     restart: unless-stopped
+    ports:
+      - 9988:9988
     networks:
       net_grafana: null
     volumes:
