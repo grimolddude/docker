@@ -45,6 +45,8 @@ services:
       - TZ=Australia/Adelaide
       - UMASK_SET=022
     restart: always
+    ports:
+      - 5656:5656
     networks:
       net_notifiarr: null
     volumes:
