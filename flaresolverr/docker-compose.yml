@@ -45,6 +45,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 9119:9119
     networks:
       net_flaresolverr: null
     restart: always
