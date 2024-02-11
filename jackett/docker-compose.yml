@@ -44,6 +44,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/timezone:/etc/timezone:ro
+    ports:
+      - 9117:9117
     networks:
       net_jackett: null
     restart: always
