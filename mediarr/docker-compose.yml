@@ -8,13 +8,13 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/TITANshare/DRONE
+      device: /mnt/something/content
       o: bind
   vol_media:
     driver: local
     driver_opts:
       type: none
-      device: /mnt/TITANshare
+      device: /mnt/something/content
       o: bind
   vol_sonarr:
     driver: local
@@ -28,36 +28,14 @@ volumes:
       type: none
       device: /opt/docker/radarr/run
       o: bind
-  vol_nginx:
-    driver: local
-    driver_opts:
-      type: none
-      device: /opt/docker/nginx/run
-      o: bind
 services:
-  app:
-    image: jc21/nginx-proxy-manager:latest
-    restart: unless-stopped
-    ports:
-      - 80:80
-      - 81:81
-      - 443:443
-    volumes:
-      - vol_nginx:/data
-    networks:
-      net_sonarr: null
-      net_radarr: null
-      net_lidarr: null
-      net_bazarr: null
-    labels:
-      - com.centurylinklabs.watchtower.enable=true
   sonarr:
     image: linuxserver/sonarr
     container_name: sonarr
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Adelaide
+      - TZ=Australia/Melbourne
       - UMASK_SET=022
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -79,7 +57,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Australia/Adelaide
+      - TZ=Australia/Melbourne
       - UMASK_SET=022
     volumes:
       - /etc/localtime:/etc/localtime:ro
